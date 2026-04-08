@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap');
+
+:root {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: hsl(312, 12%, 83%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: hsl(0, 0%, 100%) ;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 2rem;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #888;
+  max-width: 600px;
+  font-weight: 300;
+}
+
+/* Premium UI Elements */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.5rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  color: #222;
+  font-family: 'Inter', sans-serif;
+}
+
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: #444;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-link:hover {
+  color: #000;
+}
+
+.btn-signin {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-signin:hover {
+  background-color: #000;
+  transform: scale(1.02);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  pointer-events: none;
+  z-index: 50;
+  padding-top: 22vh; /* Position text in the sky area */
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 6.5rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  color: #444;
+  font-weight: 400;
+  margin-bottom: 3.5rem;
+  letter-spacing: 0.02em;
+}
+
+.btn-getstarted {
+  pointer-events: auto;
+  background-color: #2a2a2a;
+  color: #fff;
+  border: none;
+  padding: 1.1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.15rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-getstarted:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}

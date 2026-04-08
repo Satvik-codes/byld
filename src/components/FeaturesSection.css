@@ -1,0 +1,170 @@
+.features-section {
+  position: relative;
+  width: 100%;
+  padding: 8rem 5rem;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* HEADER */
+.features-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+}
+
+.features-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 5.5rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.features-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.features-link:hover {
+  border-bottom-color: #111;
+}
+
+/* GRID LAYOUT */
+.features-grid {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  gap: 3rem;
+  width: 100%;
+  align-items: start;
+}
+
+.features-left-column {
+  width: 100%;
+  height: 100%;
+}
+
+.features-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: 100%;
+}
+
+.right-top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.right-bottom-row {
+  width: 100%;
+}
+
+/* CARD COMPONENT */
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Card image constraints */
+.feature-card .image-wrapper {
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+}
+
+/* Main card is adjusted to align with the bottom of the right side images */
+.main-card .image-wrapper {
+  aspect-ratio: 1 / 0.97;
+}
+
+/* Specific heights or aspect ratios for the nested right grid */
+.features-right-column .right-top-row .feature-card .image-wrapper {
+  aspect-ratio: 1 / 1.1;
+}
+
+.features-right-column .right-bottom-row .wide-card .image-wrapper {
+  aspect-ratio: 16 / 9;
+}
+
+.feature-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  display: block;
+}
+
+.feature-card:hover img {
+  transform: scale(1.05);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #333;
+  padding: 0 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+.card-category {
+  color: #888;
+  font-weight: 400;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .features-heading {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-section {
+    padding: 5rem 2rem;
+    gap: 3rem;
+  }
+  
+  .features-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .features-heading {
+    font-size: 3rem;
+  }
+  
+  .right-top-row {
+    grid-template-columns: 1fr;
+  }
+}
