@@ -24,20 +24,6 @@ export default function FeaturesSection() {
   
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Background transition from about section (hsl(50, 32%, 93%)) to white
-      gsap.fromTo(sectionRef.current,
-        { backgroundColor: 'hsl(50, 32%, 93%)' },
-        {
-          backgroundColor: '#ffffff',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top bottom',
-            end: 'top 40%',
-            scrub: true
-          }
-        }
-      );
-
       // Staggered fade and slide up for feature cards
       gsap.fromTo('.feature-card',
         { y: 60, opacity: 0 },

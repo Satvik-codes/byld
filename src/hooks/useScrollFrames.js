@@ -26,6 +26,12 @@ export function useScrollFrames(prefix = '/sequence/ezgif-frame-', totalFrames =
     };
 
     const loadImages = async () => {
+      // Initialize an array with the correct size
+      const imageArray = new Array(totalFrames).fill(null);
+      setLoadedImages(imageArray);
+      
+      const imagePromises = [];
+
       for (let i = 1; i <= totalFrames; i++) {
         const indexStr = padNumber(i, 3);
         const url = `${prefix}${indexStr}.${extension}`;
@@ -33,14 +39,15 @@ export function useScrollFrames(prefix = '/sequence/ezgif-frame-', totalFrames =
         const img = new Image();
         img.src = url;
         
-        await new Promise((resolve) => {
+        const p = new Promise((resolve) => {
           img.onload = () => {
             if (!isCancelled) {
-              images.push(img);
+              imageArray[i - 1] = img;
               loadedCount++;
+              
+              // Only trigger a state update periodically or when needed
               setProgress(loadedCount / totalFrames);
               
-              // Set the first frame immediately for instant visual feedback
               if (i === 1) {
                 setFirstFrame(img);
               }
@@ -52,10 +59,14 @@ export function useScrollFrames(prefix = '/sequence/ezgif-frame-', totalFrames =
             if (!isCancelled) resolve();
           };
         });
+        imagePromises.push(p);
       }
 
+      await Promise.all(imagePromises);
+
       if (!isCancelled) {
-        setLoadedImages(images);
+        // Force the final reference update if needed, though they are stored in the array
+        setLoadedImages([...imageArray]);
         setIsLoaded(true);
       }
     };
